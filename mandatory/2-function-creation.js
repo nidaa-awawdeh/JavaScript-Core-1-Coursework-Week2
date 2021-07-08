@@ -6,7 +6,12 @@ Complete the function to check if the variable `num` satisfies the following req
 Tip: use logical operators
 */
 
-function validate(num) {}
+function validate(num) {
+ var even= num %2 ===0 && Number.isInteger(num) && num<= 100 ;
+  return even;
+}
+
+validate(8) 
 
 /*
 Write a function that:
@@ -16,7 +21,19 @@ Write a function that:
 - numbers greater 100 must be replaced with 100
 */
 
-function formatPercentage(num) {}
+function formatPercentage(num) {
+
+  if (num < 100){
+    return num = parseFloat((num).toFixed(2))+ "%"
+      // return num=parseFloat(num).toFixed(2)+"%"
+    
+}
+
+else {
+    return "100%";
+ }
+ }
+formatPercentage(889)
 
 /*
 Write a function that:
@@ -25,7 +42,15 @@ Write a function that:
 - removes any forward slashes (/) in each string
 - makes all strings all lowercase
 */
-function tidyUpStrings(arrayOfStrings) {}
+function tidyUpStrings(arrayOfStrings)
+
+{
+  
+  let tidy_arr = [...arrayOfStrings].map((str) =>
+    str.trim().replace("/", "").toLowerCase()
+  );
+  return tidy_arr;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
